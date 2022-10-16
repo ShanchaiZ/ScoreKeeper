@@ -7,6 +7,7 @@ const p1Display = document.querySelector("#p1Display");
 const p2Display = document.querySelector("#p2Display");
 
 let p1Score = 0;
+let p2Score = 0;
 let winningScore = 5;
 let isGameOver = false; 
 
@@ -22,7 +23,10 @@ p1Button.addEventListener("click", function () {
 });
 
 p2Button.addEventListener("click", function () {
-    alert("p2 Is working!")
+    if (p2Score !== winningScore) {
+        p2Score += 1;
+        p2Display.textContent = p2Score;
+    }
 });
 
 
@@ -38,7 +42,7 @@ p2Button.addEventListener("click", function () {
 //==================================================
 //3. Select player display and buttons with document.queryselector.
 
-//Create Scorekeepering logic: Take the current score for player 1 then increase it by 1 and then update it on the display for player 1. Once player 1 reaches the winning score = gameover.
+//Create Scorekeepering logic: Take the current score for player 1 then increase it by 1 and then update it on the display for player 1. Once player 1 reaches the winning score = gameover. Repeat logic with player 2.
 //----------------------------------------------------
 //4. Select the player 1 Score using querySelector.
 //5. let player 1 score = 0.
