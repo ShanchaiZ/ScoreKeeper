@@ -38,16 +38,30 @@ p2Button.addEventListener("click", function () {
     }
 });
 
-// Reset button:
+
+// Winnning Score Selection:
 //-------------------------------------------------------------------------------------------------------------------------------------------------
 
-resetButton.addEventListener("click", function () {
+winningScoreSelect.addEventListener("change" , function(){
+    winningScore = parseInt(this.value);
+    reset();
+});
+
+
+//note: "this" keyword WITH RESPECT to addEventlisteners refers to the winningScoreSelect variable which is a dropdown list of numbers as a string! but we need to PARSE the string into AN INTEGER so we can use the result as a NUMBER VALUE.
+
+// Reset button and its function:
+//-------------------------------------------------------------------------------------------------------------------------------------------------
+
+resetButton.addEventListener("click", reset); 
+
+function reset() {
     isGameOver = false;
     p1Score = 0;
     p2Score = 0;
     p1Display.textContent = 0;
     p2Display.textContent = 0;
-});
+}
 
 
 //PSEUDOCODE:
@@ -83,6 +97,10 @@ resetButton.addEventListener("click", function () {
 
 
 // WINNING SCORE SELECTION: 
-// 14. HTML - use "select" and "option" to list number of games to play towards the winning score.
+//14. HTML - use "select" and "option" to list number of games to play towards the winning score.
 // we want to select the winning score that we want to play towards and have the drop down option list connected to the winningScore. Therefore we want to the scorekeeping to trigger when winningScore drop down CHANGES in value.
-// 
+//15. We want to .addeventlisten to "change" when drop down NUMBER VALUE is selected.
+//16. This selected number will be obtained by ParseInt and will now be the new winningScore.
+//17. Once new winningScore is set => scorekeeping resets display automatically using the reset function. 
+//18. Therefore reset function has been rewritten as a function reset() and this reset function is used as a CALLBACK FUNCTION to the winningScoreSelection dropdown.
+
