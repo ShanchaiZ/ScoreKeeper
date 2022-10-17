@@ -6,6 +6,7 @@ const p2Button = document.querySelector("#p2Button");
 const resetButton = document.querySelector("#reset");
 const p1Display = document.querySelector("#p1Display");
 const p2Display = document.querySelector("#p2Display");
+const winningScoreSelect = document.querySelector("#playto");
 
 let p1Score = 0;
 let p2Score = 0;
@@ -60,6 +61,7 @@ resetButton.addEventListener("click", function () {
 //=================================================================================================================================================
 //3. Select player display and buttons with document.queryselector.
 
+//SCOREKEEPING LOGIC:
 //SCOREKEEPING logic 1: Take the current score for player 1 then increase it by 1 and then update it on the display for player 1. Once player 1 reaches the winning score = gameover. Repeat logic with player 2.
 //----------------------------------------------------------------------
 //4. Select the player 1 Score using querySelector.
@@ -74,7 +76,13 @@ resetButton.addEventListener("click", function () {
 //10. Once any player score === winning score, isGameOver will be === true. then none of the code will run.
 //11. repeat for player 2.
 
-
+//-------------------------------------------------------------------------------------------------------------------------------------------------
 //CREATE RESET BUTTON AND FUNCTION:
 //12. Select reset button using document.queryselector
-//13. Once button is clicked: a. Restart the game by "isGameover = false", b. Reset the players Score = 0. c. Update the player display = 0;
+//13. Once button is clicked: a. Restart the game by setting is gameOver BACK to false "isGameover = false", b. Reset the players Score = 0. c. Update the players display = 0;
+
+
+// WINNING SCORE SELECTION: 
+// 14. HTML - use "select" and "option" to list number of games to play towards the winning score.
+// we want to select the winning score that we want to play towards and have the drop down option list connected to the winningScore. Therefore we want to the scorekeeping to trigger when winningScore drop down CHANGES in value.
+// 
