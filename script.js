@@ -113,3 +113,6 @@ function reset() {
 //-------------------------------------------------------------------------------------------------------------------------------------------------
 // Optional: Winner = green, Loser = Red.
 // wrote internal/embedded html styling for winner = green, loser = red then if player 1 or player 2's display is equal to the winningScore = green. 
+
+//Aesthetics: Bulma CSS framework will be used.
+// 1. CDN will was imported from bulma documentation site.
