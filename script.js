@@ -116,3 +116,10 @@ function reset() {
 
 //Aesthetics: Bulma CSS framework will be used.
 // 1. CDN will was imported from bulma documentation site.
+// 2. create .container -> .columns -> column -> place new card inside column div before the display and after body.
+// 3. make adjustments using Bulma doc column sizing.
+//      a. column adjustment "is-half"
+//      b. column center: use offset class
+// 4. Replaced placeholder h1 with our h1 display
+// 4. Replaced placeholder cardfooter with our player 1,2 and reset buttons with ids
+
