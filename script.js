@@ -10,7 +10,7 @@ const winningScoreSelect = document.querySelector("#playto");
 
 let p1Score = 0;
 let p2Score = 0;
-let winningScore = 5;
+let winningScore = 1;
 let isGameOver = false;
 
 
@@ -22,6 +22,8 @@ p1Button.addEventListener("click", function () {
         p1Score += 1;
         if (p1Score === winningScore) {
             isGameOver = true;
+            p1Display.classList.add("winner");
+            p2Display.classList.add("loser");
         }
         p1Display.textContent = p1Score;
     }
@@ -33,6 +35,8 @@ p2Button.addEventListener("click", function () {
         p2Score += 1;
         if (p2Score === winningScore) {
             isGameOver = true;
+            p2Display.classList.add("winner");
+            p1Display.classList.add("loser");
         }
         p2Display.textContent = p2Score;
     }
@@ -42,7 +46,7 @@ p2Button.addEventListener("click", function () {
 // Winnning Score Selection:
 //-------------------------------------------------------------------------------------------------------------------------------------------------
 
-winningScoreSelect.addEventListener("change" , function(){
+winningScoreSelect.addEventListener("change", function () {
     winningScore = parseInt(this.value);
     reset();
 });
@@ -53,7 +57,7 @@ winningScoreSelect.addEventListener("change" , function(){
 // Reset button and its function:
 //-------------------------------------------------------------------------------------------------------------------------------------------------
 
-resetButton.addEventListener("click", reset); 
+resetButton.addEventListener("click", reset);
 
 function reset() {
     isGameOver = false;
@@ -61,6 +65,8 @@ function reset() {
     p2Score = 0;
     p1Display.textContent = 0;
     p2Display.textContent = 0;
+    p1Display.classList.remove("winner", "loser");
+    p2Display.classList.remove("winner", "loser");
 }
 
 
@@ -96,11 +102,14 @@ function reset() {
 //13. Once button is clicked: a. Restart the game by setting is gameOver BACK to false "isGameover = false", b. Reset the players Score = 0. c. Update the players display = 0;
 
 
-// WINNING SCORE SELECTION: 
+// WINNING SCORE SELECTION:
 //14. HTML - use "select" and "option" to list number of games to play towards the winning score.
 // we want to select the winning score that we want to play towards and have the drop down option list connected to the winningScore. Therefore we want to the scorekeeping to trigger when winningScore drop down CHANGES in value.
 //15. We want to .addeventlisten to "change" when drop down NUMBER VALUE is selected.
 //16. This selected number will be obtained by ParseInt and will now be the new winningScore.
-//17. Once new winningScore is set => scorekeeping resets display automatically using the reset function. 
+//17. Once new winningScore is set => scorekeeping resets display automatically using the reset function.
 //18. Therefore reset function has been rewritten as a function reset() and this reset function is used as a CALLBACK FUNCTION to the winningScoreSelection dropdown.
 
+//-------------------------------------------------------------------------------------------------------------------------------------------------
+// Optional: Winner = green, Loser = Red.
+// wrote internal/embedded html styling for winner = green, loser = red then if player 1 or player 2's display is equal to the winningScore = green. 
