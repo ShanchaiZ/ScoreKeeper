@@ -121,5 +121,7 @@ function reset() {
 //      a. column adjustment "is-half"
 //      b. column center: use offset class
 // 4. Replaced placeholder h1 with our h1 display
-// 4. Replaced placeholder cardfooter with our player 1,2 and reset buttons with ids
-
+// 5. Replaced placeholder cardfooter with our player 1,2 and reset buttons with ids
+// 6. Added dropdown select from bulma docs for winning score selection
+// 7. Added a card image under card header
+// 8. Wrap body in "section" as per bulma documentation for proper spacing.
