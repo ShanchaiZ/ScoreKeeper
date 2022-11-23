@@ -49,7 +49,6 @@ p2Button.addEventListener("click", function () {
 
 // Winnning Score Selection:
 //-------------------------------------------------------------------------------------------------------------------------------------------------
-
 winningScoreSelect.addEventListener("change", function () {
     winningScore = parseInt(this.value);
     reset();
