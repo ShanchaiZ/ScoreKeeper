@@ -13,4 +13,6 @@ A mini project designed to keep track of scores between 2 teams or players in a 
 ![scorekeeper](./images/scorekeeping.jpg)
 
 ## Lisence
-This app uses an MIT Lisence
+This project is under the MIT License.
+
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
